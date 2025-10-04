@@ -64,10 +64,25 @@ export default {
     {
       name: 'pdfFile',
       title: 'PDF File',
-      type: 'file',
-      options: {
-        accept: 'application/pdf'
-      },
+      type: 'object',
+      fields: [
+        {
+          name: 'file',
+          title: 'PDF',
+          type: 'file',
+          options: {
+            accept: 'application/pdf'
+          },
+          validation: Rule => Rule.required()
+        },
+        {
+          name: 'filename',
+          title: 'Download Filename',
+          type: 'string',
+          description: 'Filename to use when user downloads (e.g., "fitness-guide.pdf")',
+          validation: Rule => Rule.required()
+        }
+      ],
       validation: Rule => Rule.required()
     },
     {
@@ -76,10 +91,23 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'file',
-          options: {
-            accept: 'video/*'
-          }
+          type: 'object',
+          fields: [
+            {
+              name: 'video',
+              title: 'Video',
+              type: 'file',
+              options: {
+                accept: 'video/*'
+              }
+            },
+            {
+              name: 'filename',
+              title: 'Download Filename',
+              type: 'string',
+              description: 'Filename to use when user downloads (e.g., "workout-tutorial.mp4")'
+            }
+          ]
         }
       ]
     },
