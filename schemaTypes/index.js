@@ -1,3 +1,4 @@
 import productSchema from "./productSchema"
-export const schemaTypes = [productSchema]
+import availabilitySchema from "./availabilitySchema"
+export const schemaTypes = [productSchema, availabilitySchema]
 
