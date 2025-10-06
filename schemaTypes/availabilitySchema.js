@@ -49,6 +49,11 @@ export default {
                   title: 'Email',
                   type: 'string',
                 },
+                {
+                  name: 'message',
+                  title: 'Message',
+                  type: 'text',
+                }
               ],
             },
           ],
